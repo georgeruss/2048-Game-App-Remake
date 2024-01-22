@@ -12,6 +12,13 @@ body {
 }
 
 .game-container {
+    width: 320px;
+    height: 320px;
+    border: 2px solid rgb(109, 109, 109);
+    overflow: hidden;
+}
+
+.grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
@@ -27,3 +34,5 @@ body {
     font-size: 1.5em;
     color: black;
 }
+
+.

@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('keydown', event => {
-        if (['ArrowUp'], ['ArrowDown'], ['ArrowLeft'], ['ArrowRight'].includes(event.key)) {
+        if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key)) {
             moveTile(event.key);
         }
     });
