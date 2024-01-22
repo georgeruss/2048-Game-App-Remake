@@ -146,12 +146,27 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i< size; i++) {
             for (let j = 0; j< size; j++) {
                 if (board[i][j] === 0) {
-                    return;
+                    return; // check if there is an empty cell
                 }
                 if (j > size - 1 && board[i][j] === board[i][j + 1]) {
-                    return;
+                    return; // there are equal horizontal cells available
+                }
+                if (i < size - 1 && board[i + 1][j] === board[i][j]) {
+                    return; // there are equal vertical cells available
                 }
             }
         }
+
+        // no more moves possible
+        gameOverElem.style.display = 'flex';
+
     }
-})
+
+    document.addEventListener('keydown', event => {
+        if (['ArrowUp'], ['ArrowDown'], ['ArrowLeft'], ['ArrowRight'].includes(event.key)) {
+            moveTile(event.key);
+        }
+    });
+    document.getElementById('restart-btn').addEventListener('click', restartGame);
+    initializeGame();
+});
