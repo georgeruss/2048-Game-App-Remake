@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             }
-    }
+    
         // cleanup for animation classes
         setTimeout(() => {
             const cells = document.querySelectorAll('.grid-cell');
@@ -67,9 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 cell.classList.remove('merged-tile', 'new-tile')
             });
         }, 300)
-
+    }
         // function to place random tiles on the board
-        function placeRandom() {
+    function placeRandom() {
             const available = [];
             for(let i = 0; i < size; i++) {
                 for (let j = 0; j < size; j++) {
