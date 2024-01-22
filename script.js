@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // cleanup for animation classes
         setTimeout(() => {
-            const cells = document.querySelectorAll('grid-cell');
+            const cells = document.querySelectorAll('.grid-cell');
             cells.forEach(cell => {
                 cell.classList.remove('merged-tile', 'new-tile')
             });
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (hasChanged) {
             placeRandom();
             renderBoard();
-            checkGameOver;
+            checkGameOver();
         }
     }
 
