@@ -94,6 +94,63 @@ document.addEventListener('DOMContentLoaded', () => {
         if (direction === 'ArrowUp' || direction === 'ArrowDown') {
             for (let j = 0; j < size; j++) {
                 const column = [...Array(size)].map((_, i) => board[i][j]);
+                const newColumn = transform(column, direction === 'ArrowUp');
+                for (let i = 0; i< size; i++) {
+                    if (board[i][j] !== newColumn[i]) {
+                        hasChanged = true;
+                        board[i][j] = newColumn[i];
+                    }
+                }
+            }
+        } else if (direction === 'ArrowLeft' || direction === 'ArrowRight') {
+            for (let i = 0; i < size; i++) {
+                const row = board[i];
+                const newRow = transform(row, direction === 'ArrowLeft');
+                if (row.join(',') !== newRow.join(',')) {
+                    hasChanged = true;
+                    board[i] = newRow;
+                }
+            }
+        }
+        if (hasChanged) {
+            placeRandom();
+            renderBoard();
+            checkGameOver;
+        }
+    }
+
+    // transform a line (row/column) based on movement in direction
+    function transform(line, moveTowardsStart) {
+        let newLine = line.filter(cell => cell !== 0);
+        if (!moveTowardsStart) {
+            newLine.reverse();
+        }
+        for(let i = 0; i < newLine.length - 1; i++) {
+            if (newLine[i] === newLine[i + 1]) {
+                newLine[i] *= 2;
+                updateScore(newLine[i]);
+                newLine.splice(i +1, 1);
+            }
+        }
+        while(newLine.length < size) {
+            newLine.push(0);
+        }
+        if (!moveTowardsStart) {
+            newLine.reverse();
+        }
+        return newLine;
+    }
+
+    // checks if the game is over
+    function checkGameOver() {
+        for (let i = 0; i< size; i++) {
+            for (let j = 0; j< size; j++) {
+                if (board[i][j] === 0) {
+                    return;
+                }
+                if (j > size - 1 && board[i][j] === board[i][j + 1]) {
+                    return;
+                }
             }
         }
     }
