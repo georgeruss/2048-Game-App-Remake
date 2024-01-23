@@ -1,14 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () =>{
     const grid = document.querySelector('.grid');
     const size = 4;
     let board = [];
     let currentScore = 0;
     const currentScoreElem = document.getElementById('current-score');
-    
-    // high score from local storage device or 0 if not present
 
+    // high score from local storage device or 0 if not present
     let highScore = localStorage.getItem('2048-highScore') || 0;
-    const highScoreElem = getElementById('high-score');
+    const highScoreElem = document.getElementById('high-score');
     highScoreElem.textContent = highScore;
 
     const gameOverElem = document.getElementById('game-over');
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } // if
     } // update score
 
-        // function to restart game
+    // function to restart game
     function restartGame() {
             currentScore = 0;
             currentScoreElem.textContent = '0';
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             initializeGame();
     } // restartGame
 
-        // intializes game
+    // initializes game
     function initializeGame() {
         board = [...Array(size)].map(e => Array(size).fill(0));
         placeRandom();
@@ -40,19 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
         renderBoard();
     } // initializeGame
 
-        // renders the board 
+    // renders the board 
     function renderBoard() {
         for (let i = 0; i < size; i++) {
-                for (let j = 0; j < size; j++) {
-                    const cell = document.querySelector(`[data-row="${i}"][data-col="${j}"]`);
-                    const prevValue = cell.dataset.value;
-                    const currentValue = board[i][j];
-                    if (currentValue !== 0) {
-                        cell.dataset.value = currentValue;
-                        cell.textContent = currentValue;
-                        if (currentValue !== parseInt(prevValue) && !cell.classList.contains('new-tile')) {
-                            cell.classList.add('merged-tile');
-                        } // if
+            for (let j = 0; j < size; j++) {
+                const cell = document.querySelector(`[data-row = "${i}"][data-col = "${j}"]`);
+                const prevValue = cell.dataset.value;
+                const currentValue = board[i][j];
+                if (currentValue !== 0) {
+                    cell.dataset.value = currentValue;
+                    cell.textContent = currentValue;
+                    // 
+                    if (currentValue !== parseInt(prevValue) && !cell.classList.contains('new-tile')) {
+                        cell.classList.add('merged-tile');
+                    } // if
                     } else {
                         cell.textContent = '';
                         delete cell.dataset.value;
@@ -63,22 +63,23 @@ document.addEventListener('DOMContentLoaded', () => {
     
         // cleanup for animation classes
         setTimeout(() => {
-            const cells = document.querySelectorAll('.grid-cell');
-            cells.forEach(cell => {
+            const cells = document.querySelectorAll('grid-cell');
+            cells.forEach(cell =>{
                 cell.classList.remove('merged-tile', 'new-tile');
             });
         }, 300);
     }
-        // function to place random tiles on the board
+    
+    // function to place random tiles on the board
     function placeRandom() {
-            const available = [];
-            for(let i = 0; i < size; i++) {
-                for (let j = 0; j < size; j++) {
-                    if (board[i][j] === 0) {
-                        available.push({x: i, y: j});    
-                    } // if
-                } // for
+        const available = [];
+        for(let i = 0; i < size; i++) {
+            for (let j = 0; j < size; j++) {
+                if (board[i][j] === 0) {
+                    available.push({x: i, y: j});    
+                } // if
             } // for
+        } // for
             
         if (available.length > 0) {
             const randomCell = available[Math.floor(Math.random() * available.length)];
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     } // if
                 } // for 
             } // for
-        } else if (direction === 'ArrowLeft' || direction === 'ArrowRight') {
+        }else if(direction === 'ArrowLeft' || direction === 'ArrowRight') {
             for (let i = 0; i < size; i++) {
                 const row = board[i];
                 const newRow = transform(row, direction === 'ArrowLeft');
@@ -116,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             placeRandom();
             renderBoard();
             checkGameOver();
-        }
+        } // if
     } // move
 
     // transform a line (row/column) based on movement in direction
@@ -156,15 +157,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 } // if
             } // for
         } // for
+     
         // no more moves possible
         gameOverElem.style.display = 'flex';
-    }
+    } // checkGameOver
 
+    // Event listeners
     document.addEventListener('keydown', event => {
-        if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key)) {
+        if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
             move(event.key);
         }
     });
+
     document.getElementById('restart-btn').addEventListener('click', restartGame);
     initializeGame();
 });

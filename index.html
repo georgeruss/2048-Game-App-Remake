@@ -1,65 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheet" href="style.css">
-       <title>2048 Game - Remake</title> 
-    </head>
-    <body>
-        <div class="score-container">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="waves.css">
+   <title>2048 Game - Remake</title> 
+</head>
+<body>
+<section>
+    <div class="score-container">
             <div>
                 Score: <span id="current-score"></span>
             </div>
             <div>
                 High Score: <span id="high-score"></span>
             </div>
-        </div>
-        <div class="game-container">
-            <div class="grid">
-                <div class="cell" data-row="0" 
-                data-col="0"></div>
-                <div class="cell" data-row="0" 
-                data-col="1"></div>
-                <div class="cell" data-row="0" 
-                data-col="2"></div>
-                <div class="cell" data-row="0" 
-                data-col="3"></div>
-
-                <div class="cell" data-row="1" 
-                data-col="0"></div>
-                <div class="cell" data-row="1" 
-                data-col="1"></div>
-                <div class="cell" data-row="1" 
-                data-col="2"></div>
-                <div class="cell" data-row="1" 
-                data-col="3"></div>
-
-                <div class="cell" data-row="2" 
-                data-col="0"></div>
-                <div class="cell" data-row="2" 
-                data-col="1"></div>
-                <div class="cell" data-row="2" 
-                data-col="2"></div>
-                <div class="cell" data-row="2" 
-                data-col="3"></div>
-
-                <div class="cell" data-row="3" 
-                data-col="0"></div>
-                <div class="cell" data-row="3" 
-                data-col="1"></div>
-                <div class="cell" data-row="3" 
-                data-col="2"></div>
-                <div class="cell" data-row="3" 
-                data-col="3"></div>
-            </div>
-        </div>
-
-        <div id="game-over">
-            Game Over!
-            <button id="restart-btn">Restart Game</button>
-        </div>
-
-        <script src="script.js"></script>
-    </body>
+    </div>
+    <div class="game-container">
+        <div class="grid">
+            <div class="cell" data-row="0" data-col="0"></div>
+            <div class="cell" data-row="0" data-col="1"></div>
+            <div class="cell" data-row="0" data-col="2"></div>
+            <div class="cell" data-row="0" data-col="3"></div>
+            <div class="cell" data-row="1" data-col="0"></div>
+            <div class="cell" data-row="1" data-col="1"></div>
+            <div class="cell" data-row="1" data-col="2"></div>
+            <div class="cell" data-row="1" data-col="3"></div>
+            <div class="cell" data-row="2" data-col="0"></div>
+            <div class="cell" data-row="2" data-col="1"></div>
+            <div class="cell" data-row="2" data-col="2"></div>
+            <div class="cell" data-row="2" data-col="3"></div>
+            <div class="cell" data-row="3" data-col="0"></div>
+            <div class="cell" data-row="3" data-col="1"></div>
+            <div class="cell" data-row="3" data-col="2"></div>
+            <div class="cell" data-row="3" data-col="3"></div>
+        </div>    
+    </div>
+    <div id="game-over">
+        Start Over?
+        <button id="restart-btn">Restart Game</button>
+    </div>
+    <script src="script.js"></script>
+    <div class='air air1'></div>
+    <div class='air air2'></div>
+    <div class='air air3'></div>
+    <div class='air air4'></div>
+    </section>
+</body>
 </html>
