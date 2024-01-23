@@ -11,6 +11,22 @@ body {
     background-color: #fafafa;
 }
 
+.title {
+    font-size: 1.5rem;
+    margin: 0 auto;
+    align-items: center;
+    padding: 1rem;
+    display: flex;
+    text-shadow: #000 0px 1px 1px;
+    justify-content: center;
+    height: 5em;
+    transform: skew(0, -5deg);
+}
+
+.title:hover {
+   color:#fafafa;
+}
+
 .game-container {
     width: 320px;
     height: 320px;
