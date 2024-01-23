@@ -16,7 +16,7 @@ body {
     height: 320px;
     border: 1px solid rgb(109, 109, 109);
     overflow: hidden;
-}
+} 
 
 .grid {
     display: grid;

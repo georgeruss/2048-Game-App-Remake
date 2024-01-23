@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     highScoreElem.textContent = highScore;
 
     const gameOverElem = document.getElementById('game-over');
-    
+     
     // function updates the score
     function updateScore(value) {
         currentScore += value;
