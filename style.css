@@ -20,7 +20,7 @@ body {
     text-shadow: #000 0px 1px 1px;
     justify-content: center;
     height: 5em;
-    transform: skew(0, -5deg);
+    transform: skew(0, -2deg);
 }
 
 .title:hover {
@@ -32,7 +32,87 @@ body {
     height: 320px;
     border: 1px solid rgb(109, 109, 109);
     overflow: hidden;
+    
 } 
+
+.game-background {
+    box-shadow: 0 0 0 1px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    overflow: hidden;
+    
+}
+
+.fancy {
+    box-shadow: #000 0px 2px 0 0px;
+    position: relative;
+    white-space: nowrap;
+    text-shadow: #000 0px 1px 1px;
+    &:after {
+      --deco-height: 0.3125em;
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: calc(var(--deco-height) * -0.625);
+      height: var(--deco-height);
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+      background-size: auto 100%;
+      background-repeat: round;
+      background-position: 0em;
+    }
+    
+  }
+
+  .button-50 {
+    outline: none;
+    user-select: none;
+    color: #000;
+    font-size: 1.5rem;
+    letter-spacing: 0.04rem;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    border-radius: .5rem;
+    border: .2rem solid #000;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+  
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%; 
+      top: 0;
+      left: 0;
+      transform: scale(0);
+      transition: transform .3s ease-in;
+      mix-blend-mode: difference;
+      background: radial-gradient(
+        circle at center, 
+        #fff 24%, 
+        #000 25%, 
+        #000 100%);
+    }  
+  
+    box-shadow: 0 3px 0 0 #000;
+    &:active {
+      top: 3px;
+      box-shadow: none;
+    }
+}
+
+.button-50:focus {
+    text-decoration: none;
+  }
+  
+  .button-50:hover {
+    text-decoration:underline;
+  }
+  
+  .button-50:active {
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    outline: 1;
+  }
 
 .grid {
     display: grid;
@@ -49,6 +129,16 @@ body {
     justify-content: center;
     font-size: 1.5em;
     color: #000;
+}
+
+.cell:hover {
+    width: 75px;
+    height: 75px;
+    background: #dadada;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 2.0em;
 }
 
 .score-container {
@@ -103,16 +193,18 @@ body {
     padding: 10px 15px;
     background-color: #f4f4f4;
     border: none;
-    backdrop-filter: blur(0.2em);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in;
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px;
+    outline: #000 1px outset;
+    outline: #000 2px inset;
 }
 
 #game-over {
-    position: absolute;
-    top: 50%;
+    position:absolute;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0,0,0.8);
+    background-color: rgba(0, 0,0,0);
     color: #fff;
     display: none;
     flex-direction: column;

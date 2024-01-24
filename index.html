@@ -15,35 +15,36 @@
         </div>
     <div class="score-container">
             <div>
-                Score: <span id="current-score"></span>
+                Score: <span id="current-score">0</span>
             </div>
             <div>
-                High Score: <span id="high-score"></span>
+                High Score: <span id="high-score">0</span>
             </div>
     </div>
-    <div class="game-container">
-        <div class="grid">
-            <div class="cell" data-row="0" data-col="0"></div>
-            <div class="cell" data-row="0" data-col="1"></div>
-            <div class="cell" data-row="0" data-col="2"></div>
-            <div class="cell" data-row="0" data-col="3"></div>
-            <div class="cell" data-row="1" data-col="0"></div>
-            <div class="cell" data-row="1" data-col="1"></div>
-            <div class="cell" data-row="1" data-col="2"></div>
-            <div class="cell" data-row="1" data-col="3"></div>
-            <div class="cell" data-row="2" data-col="0"></div>
-            <div class="cell" data-row="2" data-col="1"></div>
-            <div class="cell" data-row="2" data-col="2"></div>
-            <div class="cell" data-row="2" data-col="3"></div>
-            <div class="cell" data-row="3" data-col="0"></div>
-            <div class="cell" data-row="3" data-col="1"></div>
-            <div class="cell" data-row="3" data-col="2"></div>
-            <div class="cell" data-row="3" data-col="3"></div>
-        </div>    
+    <div class="game-background">
+        <div class="game-container">
+            <div class="grid">
+                <div class="cell" data-row="0" data-col="0"></div>
+                <div class="cell" data-row="0" data-col="1"></div>
+                <div class="cell" data-row="0" data-col="2"></div>
+                <div class="cell" data-row="0" data-col="3"></div>
+                <div class="cell" data-row="1" data-col="0"></div>
+                <div class="cell" data-row="1" data-col="1"></div>
+                <div class="cell" data-row="1" data-col="2"></div>
+                <div class="cell" data-row="1" data-col="3"></div>
+                <div class="cell" data-row="2" data-col="0"></div>
+                <div class="cell" data-row="2" data-col="1"></div>
+                <div class="cell" data-row="2" data-col="2"></div>
+                <div class="cell" data-row="2" data-col="3"></div>
+                <div class="cell" data-row="3" data-col="0"></div>
+                <div class="cell" data-row="3" data-col="1"></div>
+                <div class="cell" data-row="3" data-col="2"></div>
+                <div class="cell" data-row="3" data-col="3"></div>
+            </div>    
+        </div>
     </div>
     <div id="game-over">
-        Start Over?
-        <button id="restart-btn">Restart Game</button>
+        <button class="button-50" id="restart-btn">Restart Game</button>
     </div>
     <script src="script.js"></script>
     <div class='air air1'></div>
