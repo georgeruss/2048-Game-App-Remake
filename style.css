@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Honk&family=Rubik+Doodle+Shadow&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
 
 body {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Single Day', cursive;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -10,26 +9,25 @@ body {
     overflow: hidden;
     height: 100vh;
     background-color: #fafafa;
-    font-size: 1.05em;
+    font-size: 1.5em;
 }
 
 .title {
     font-size: 2rem;
-    font-family: 'Rubik Doodle Shadow', system-ui;
+    font-family: 'Single Day', cursive;
     margin: 1 auto;
     align-items: center;
-    padding: 2rem;
+    padding: 1.5rem;
     display:flex;
-    text-shadow: grey 0px 2px 2px;
     justify-content: center;
     height: 1.5rem;
-    width: 10em;
+    width: 8em;
     transform: skew(0, -2deg);
     background-color: white;
 }
 
 .title:hover {
-   text-decoration: underline 17%;
+   text-decoration: underline;
 }
 
 .game-container {
@@ -213,9 +211,13 @@ body {
     outline: #000 2px inset;
 }
 
+#restart-btn:hover {
+  size: 75%;
+}
+
 #game-over {
     position:absolute;
-    top: 60%;
+    top: 82%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0,0,0);
