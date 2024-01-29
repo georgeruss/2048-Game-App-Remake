@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Rubik+Doodle+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Source Code Pro', monospace;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -9,22 +10,26 @@ body {
     overflow: hidden;
     height: 100vh;
     background-color: #fafafa;
+    font-size: 1.05em;
 }
 
 .title {
-    font-size: 1.5rem;
-    margin: 0 auto;
+    font-size: 2rem;
+    font-family: 'Rubik Doodle Shadow', system-ui;
+    margin: 1 auto;
     align-items: center;
-    padding: 1rem;
-    display: flex;
-    text-shadow: #000 0px 1px 1px;
+    padding: 2rem;
+    display:flex;
+    text-shadow: grey 0px 2px 2px;
     justify-content: center;
-    height: 5em;
+    height: 1.5rem;
+    width: 10em;
     transform: skew(0, -2deg);
+    background-color: white;
 }
 
 .title:hover {
-   color:#fafafa;
+   text-decoration: underline 17%;
 }
 
 .game-container {
@@ -37,8 +42,8 @@ body {
 
 .game-background {
     box-shadow: 0 0 0 1px;
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
-    overflow: hidden;
+    /*background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    */overflow: hidden;
     
 }
 
@@ -132,13 +137,9 @@ body {
 }
 
 .cell:hover {
-    width: 75px;
-    height: 75px;
-    background: #dadada;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    font-size: 2.0em;
+    box-shadow: 0 0 0 2px;
+    outline: 1;
+    font-size: 2em;
 }
 
 .score-container {
@@ -149,43 +150,56 @@ body {
 }
 
 .cell[data-value="2"] {
-    background-color: #ffc0cb;
+    color: black;
+    background-color: #eee4da;
 }
 .cell[data-value="4"] {
-    background-color: #add8e6;
+    color: black;
+    background-color: #ede0c8;
 }
 .cell[data-value="8"] {
-    background-color: #98fb98;
+    color: white;
+    background-color: #f2b179;
 }
 .cell[data-value="16"] {
-    background-color: #ffd700;
+    color: white;
+    background-color: #f59563;
 }
 .cell[data-value="32"] {
-    background-color: #ffa07a;
+    color: white;
+    background-color: #f67c5f;
 }
 .cell[data-value="64"] {
-    background-color: #ffa07a;
+    color: white;
+    background-color: #f65e3b;
 }
 .cell[data-value="128"] {
-    background-color: #ffff00;
+    color: white;
+    background-color: #edcf72;
 }
 .cell[data-value="256"] {
-    background-color: #40e0d0;
+    color: white;
+    background-color: #edcc61;
 }
 .cell[data-value="512"] {
-    background-color: #ff69b4;
+    color: white;
+    background-color: #edc850;
 }
 
 .cell[data-value="1024"] {
-    background-color: #7b68ee;
+    color: white;
+    background-color: #edc53f;
 }
 
 .cell[data-value="2048"] {
-    background-color: #ff6347;
+    color: white;
+    background-color: #edc22e;
 }
 
 .cell[data-value="4096"] {
-    background-color: #a9a9a9;
+    color: white;
+    text-decoration: wavy;
+    background-color: #ed382e;
 }
 
 #restart-btn {

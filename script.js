@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () =>{
                 cell.classList.remove('merged-tile', 'new-tile');
             });
         }, 300);
-    }
+    } // renderBoard
     
     // function to place random tiles on the board
     function placeRandom() {
@@ -157,11 +157,10 @@ document.addEventListener('DOMContentLoaded', () =>{
                 } // if
             } // for
         } // for
-     
         // no more moves possible
         gameOverElem.style.display = 'flex';
     } // checkGameOver
-
+    
     // Event listeners
     document.addEventListener('keydown', event => {
         if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
