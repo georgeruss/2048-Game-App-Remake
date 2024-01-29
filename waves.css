@@ -1,21 +1,23 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0em;
+    padding: 0em;
 }
 
 body {
-position: relative;
-width: 100%;
-height: 100vh;
-background: #3586ff;
-overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #3586ff;
+    overflow: hidden;
+    padding: 1.5rem;
 } 
+
 body .air{
 position: absolute;
-bottom: 0;
+bottom: 2em;
 left: 0;
 width: 100%;
-height: 100px;
+height: 90px;
 background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
 background-size: 1000px 100px
 }
@@ -24,7 +26,7 @@ animation: wave 30s linear infinite;
 z-index: 1000;
 opacity: 1;
 animation-delay: 0s;
-bottom: 0;
+bottom: 0em;
 }
 body .air.air2{
 animation: wave2 15s linear infinite;

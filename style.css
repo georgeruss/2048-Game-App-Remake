@@ -35,7 +35,6 @@ body {
     height: 320px;
     border: 1px solid rgb(109, 109, 109);
     overflow: hidden;
-    
 } 
 
 .game-background {
@@ -209,10 +208,6 @@ body {
     box-shadow: rgba(0, 0, 0, .125) 0 3px 5px;
     outline: #000 1px outset;
     outline: #000 2px inset;
-}
-
-#restart-btn:hover {
-  size: 75%;
 }
 
 #game-over {
